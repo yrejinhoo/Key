@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Astrion Key</title>
+  <style>
+    body{background:#0f0c29;color:white;text-align:center;padding:20px;font-family:sans-serif}
+    .card{background:rgba(0,0,0,0.7);padding:20px;border-radius:15px;max-width:500px;margin:0 auto}
+    .key{background:#000;padding:12px;border-radius:8px;margin:15px 0;word-break:break-all;font-size:16px}
+    .btn{background:#ff416c;color:white;border:none;padding:12px;width:100%;border-radius:8px;margin:10px 0;cursor:pointer}
+    .copy{background:#00c9ff;display:none}
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>🔑 Astrion Key Generator</h2>
+    <div class="key" id="k">Click "Create Key"</div>
+    <button class="btn" onclick="g()">Create Key</button>
+    <button class="btn copy" id="c" onclick="c()">Copy Key</button>
+  </div>
+  <script>
+    function r(){let c="ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",s="";for(let i=0;i<6;i++)s+=c[Math.floor(Math.random()*c.length)];return s}
+    function g(){let k="Astrion_keyhabwubwva_"+r();document.getElementById("k").innerText=k;document.getElementById("c").style.display="block"}
+    function c(){let k=document.getElementById("k").innerText;if(k.includes("Click"))return;navigator.clipboard.writeText(k).then(()=>{let e=document.getElementById("k");e.innerText="✅ Copied!";setTimeout(()=>e.innerText=k,2000)})}
+  </script>
+</body>
+</html>

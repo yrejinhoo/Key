@@ -1,0 +1,3 @@
+{
+  "rewrites": [{ "source": "/validate", "destination": "/api/validate" }]
+}
